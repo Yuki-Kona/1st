@@ -1,0 +1,1243 @@
+@font-face {
+  font-family: "MyFont";
+  src: url(font/karakaze-R.ttf);
+}
+* {
+  margin: 0;
+}
+body {
+  font-family: MyFont;
+  background: url(img/圧縮/index3.jpg) center no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 480px) {
+  body {
+    background: url(img/圧縮/index3-mobail.jpg) center no-repeat;
+    background-size: cover;
+  }
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 3vh;
+}
+/*ロゴ*/
+.logo {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  margin: 25px 50px;
+  animation-name: fluffy;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  top: 2%;
+  overflow: hidden;
+  z-index: 2;
+}
+.cloping {
+  position: relative;
+  top: 40px;
+  transition: 0.2s;
+  left: 0;
+}
+.cliping-img {
+  width: 100%;
+  height: 100%;
+}
+.logo:hover > a > .back > .cloping {
+  top: 0;
+  transition: 1s;
+}
+.back {
+  -webkit-mask-image: url(img/logo.png);
+  mask-image: url(img/logo.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 480px) {
+  .logo {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin: 15px 15px;
+    animation-name: fluffy;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    top: 2%;
+    overflow: hidden;
+    z-index: 2;
+  }
+  .cloping {
+    width: 20px;
+    height: 20px;
+  }
+  .back {
+    -webkit-mask-image: url(img/圧縮/logo-mobail.png);
+    mask-image: url(img/圧縮/logo-mobail.png);
+  }
+}
+
+/*キャッチコピー*/
+.kachicopy {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  left: 0%;
+  width: 46%;
+  height: 100%;
+  opacity: 0;
+  animation-name: fluffy;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+32,0+32,0.19+100 */
+  background: -moz-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 32%,
+    rgba(0, 0, 0, 0.19) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 32%,
+    rgba(0, 0, 0, 0.19) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 32%,
+    rgba(0, 0, 0, 0.19) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#30000000',GradientType=1 ); /* IE6-9 */
+}
+.styl-C {
+  position: absolute;
+  height: 100%;
+  left: 46%;
+}
+.styl-C::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  transform-origin: top;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.16+0,0+100;White+to+Transparent */
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+
+  left: 0;
+  top: 0%;
+  animation-name: top-line;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+p {
+  padding: 0px;
+  margin: 10px;
+  font-size: 3vw;
+}
+@media (max-width: 480px) {
+  .kachicopy > p {
+    font-size: 6vw;
+  }
+  .styl-C {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0%;
+    top: 75%;
+  }
+  .styl-C::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    transform-origin: top;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+17,0+17,0+17,1+49,0+83,0+83,0+83 */
+    background: -moz-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 17%,
+      rgba(255, 255, 255, 1) 49%,
+      rgba(255, 255, 255, 0) 83%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 17%,
+      rgba(255, 255, 255, 1) 49%,
+      rgba(255, 255, 255, 0) 83%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 17%,
+      rgba(255, 255, 255, 1) 49%,
+      rgba(255, 255, 255, 0) 83%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+
+    left: 0%;
+    top: 0%;
+    transform-origin: center;
+    animation-name: top-line;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  .kachicopy {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    left: 0%;
+    top: 50%;
+    width: 100%;
+    height: 30%;
+    padding: 0 0 30% 0;
+    animation-name: fluffy;
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+    background: -moz-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+  }
+}
+/*nav*/
+nav {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.navall:hover:not(.nav:hover) {
+  color: rgba(0, 0, 0, 0.4);
+}
+.nav:hover {
+  padding-bottom: 10px;
+}
+.nav::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.nav:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.navall {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 50px;
+}
+
+/*mobail*/
+.nav-mobail {
+  display: none;
+}
+@media (max-width: 480px) {
+  nav {
+    top: 500vw;
+  }
+  .nav-mobail {
+    display: block;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .mobail-label {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    font-size: 200%;
+    animation-name: fluffy-menu;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transform: translate(-50%, 50%);
+    -webkit-transform: translate(-50%, 50%);
+    -ms-transform: translate(-50%, 50%);
+  }
+  .mobail-return {
+    background: rgba(0, 0, 0, 0.8) !important;
+    z-index: 5;
+    width: 150% !important;
+  }
+  .nav-mobail-all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    top: 0;
+  }
+  .mobail {
+    position: relative;
+    z-index: 6;
+    font-size: 0%;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    animation-name: fluffy-menu1;
+    animation-duration: 0.5s;
+    transition: 0.5s;
+  }
+  .mobail::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 1px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+50,0+99 */
+    background: -moz-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 99%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 99%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 99%,
+      rgba(255, 255, 255, 0) 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+
+    left: -50%;
+    bottom: 0;
+  }
+  /*チェックボックス*/
+  .start-up:checked ~ .mobail:nth-child(3) {
+    animation-duration: 1s;
+    animation-name: fluffy;
+    font-size: 300%;
+  }
+  .start-up:checked ~ .mobail:nth-child(4) {
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-name: fluffy;
+    font-size: 300%;
+  }
+  .start-up:checked ~ .mobail:nth-child(5) {
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-name: fluffy;
+    font-size: 300%;
+  }
+  .start-up:checked ~ .mobail:nth-child(6) {
+    animation-duration: 1s;
+    animation-delay: 0.6s;
+    animation-name: fluffy;
+    font-size: 300%;
+  }
+}
+/*copyの処理*/
+footer {
+  position: relative;
+  right: -10%;
+  display: flex;
+  justify-content: center;
+}
+.copy {
+  animation-name: fluffy;
+  animation-delay: 3.7s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  margin: auto 0;
+}
+.copy-img-all:hover > .styl > .copy-in {
+  top: -200%;
+  opacity: 1;
+  transition: 0.4s;
+}
+.copy-p {
+  position: absolute;
+  font-size: 17px;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.copy-in {
+  position: absolute;
+  color: #111;
+  padding: 20px;
+  left: -110%;
+  top: -140%;
+  background: url(img/圧縮/logo2sab.png) center no-repeat;
+  background-size: cover;
+  width: 150%;
+  height: 70%;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+/*ナビのアニメーション指定*/
+.navall > .nav:nth-child(1) {
+  animation-name: fluffy;
+  opacity: 0;
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.navall > .nav:nth-child(2) {
+  animation-name: fluffy;
+  opacity: 0;
+  animation-delay: 2.5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.navall > .nav:nth-child(3) {
+  animation-name: fluffy;
+  opacity: 0;
+  animation-delay: 3s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.navall > .nav:nth-child(4) {
+  animation-name: fluffy;
+  opacity: 0;
+  animation-delay: 3.3s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+/*articleの設定*/
+article {
+  z-index: 7;
+}
+/*アクセス*/
+.access-all {
+  position: absolute;
+  width: 87%;
+  height: 96%;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: url(img/圧縮/map.jpg) center no-repeat;
+  background-size: cover;
+  animation-name: fluffy-menu1;
+  animation-duration: 0.5s;
+  transition: 0.5s;
+  border-radius: 30px;
+  z-index: 8;
+}
+.access-styl {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+}
+.access-styl h1 {
+  color: white;
+  font-size: 3vw;
+  margin: 0 0 0 4%;
+  padding-top: 2%;
+  position: relative;
+}
+.access-styl > h1::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+23,1+28,1+28,1+29,1+29,1+29,1+29,1+29,1+29,1+29,1+36,1+36,1+70,0+100 */
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(255, 255, 255, 1) 28%,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(255, 255, 255, 1) 28%,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(255, 255, 255, 1) 28%,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.detail > h1 {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  padding: 0 0 0 20%;
+}
+.ferry-icon::after {
+  content: url(img/圧縮/ferry2.png);
+  position: absolute;
+  left: 0;
+}
+.walking-icon::after {
+  content: url(img/圧縮/walking.png);
+  position: absolute;
+  left: 0;
+}
+.time-icon::after {
+  content: url(img/圧縮/timer.png);
+  position: absolute;
+  left: 0;
+}
+.access-contens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5% 0 0 0;
+  overflow: scroll;
+  height: 77%;
+}
+.access-contens::-webkit-scrollbar {
+  display: none;
+}
+.map {
+  margin: 2% 4% 4% 4%;
+  position: sticky;
+  top: 10%;
+  height: 30vw;
+  width: 30vw;
+}
+iframe {
+  border-radius: 10px;
+}
+
+.detail {
+  right: 0;
+  width: 40%;
+  margin: 4% 4% 0% 0%;
+}
+/*画面調節*/
+@media (max-width: 1436px) {
+  .map {
+    position: static;
+    width: 90%;
+    height: 80%;
+  }
+  .detail {
+    padding: 0 0 10% 0;
+    width: 80%;
+    padding: 0 0 0 4%;
+    margin: 0 0 0 4%;
+  }
+  .detail h1 {
+    margin: 10% 0 0 0;
+    font-size: 350%;
+  }
+  .total::before {
+    top: -50px;
+    margin-left: 30%;
+  }
+  .root-contns {
+    display: block;
+    margin: 50px 0 50px;
+  }
+  .total::before {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 729px) {
+  .pc {
+    display: block;
+  }
+  .pe {
+    display: none;
+  }
+}
+@media (max-width: 728px) {
+  .pc {
+    display: none;
+  }
+  .pe {
+    display: block;
+  }
+  .total::before {
+    content: url(img/ferry2-20px.png) "+" url(img/walking-20px.png) !important;
+    position: absolute;
+    top: 100%;
+
+    font-size: 100% !important;
+  }
+}
+@media (max-width: 480px) {
+  .map {
+    position: static;
+    width: 90%;
+    height: 50%;
+  }
+  .time-icon::after {
+    content: url(img/圧縮/timer.png);
+    position: absolute;
+    left: 0;
+  }
+  .detail > h1 {
+    padding: 0 0 0 30%;
+  }
+  .access-styl > h1 {
+    font-size: 10vw;
+  }
+  .total::before {
+    left: -60% !important;
+  }
+}
+.root {
+  margin: 50px 0 235px 4%;
+  padding: 0 0 0% 15%;
+  color: white;
+  display: flow-root;
+}
+.root-contns {
+  padding: 2% 0% 2% 15%;
+  margin: 15% 0;
+  position: relative;
+  font-size: 150%;
+}
+.root-contns::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  background: white;
+  left: 0;
+  top: 0;
+  height: 100%;
+  transform: rotate(15deg);
+}
+/*フェリーの番号*/ /*徒歩の時間*/
+.root-contns:not(.total):nth-child(1)::before {
+  content: "1";
+  position: absolute;
+  font-size: 400%;
+  left: -20%;
+  top: -90%;
+  color: white;
+}
+.root-contns:nth-child(2)::before {
+  content: "2";
+  position: absolute;
+  font-size: 400%;
+  left: -20%;
+  top: -90%;
+  color: white;
+}
+.root-contns:nth-child(3)::before {
+  content: "3";
+  position: absolute;
+  font-size: 400%;
+  left: -20%;
+  top: -90%;
+  color: white;
+}
+.root-contns:nth-child(4)::before {
+  content: "4";
+  position: absolute;
+  font-size: 400%;
+  left: -20%;
+  top: -90%;
+  color: white;
+}
+.total::before {
+  content: url(img/圧縮/ferry2.png) "+" url(img/圧縮/walking.png);
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 16%;
+  left: -50%;
+  margin-top: -60px;
+  font-size: 400%;
+}
+/*チェックボックス*/
+.start-up:checked ~ .access-all {
+  top: 50%;
+  animation-duration: 1s;
+  animation-name: fluffy-menu;
+}
+.accses-return {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  text-align: center;
+  color: rgb(121, 121, 121);
+  height: 3vw;
+  width: 3vw;
+  font-size: 2vw;
+  border-radius: 50%;
+  border: 1px solid rgb(121, 121, 121);
+  z-index: 5;
+}
+.accses-return:hover {
+  color: white;
+  border-color: white;
+}
+/*商品*/
+/*テーブル*/
+.product-all {
+  margin: 20px;
+  height: 93%;
+  overflow: auto;
+  -ms-overflow-style: none;
+}
+.product-all::-webkit-scrollbar {
+  display: none;
+}
+.product-contens > h1 {
+  font-size: 3vw;
+  color: white;
+  position: relative;
+}
+.product-contens > h1::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+23,1+28,1+28,1+29,1+29,1+29,1+29,1+29,1+29,1+29,1+36,1+36,1+70,0+100 */
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(255, 255, 255, 1) 28%,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(255, 255, 255, 1) 28%,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(255, 255, 255, 1) 28%,
+    rgba(255, 255, 255, 1) 29%,
+    rgba(255, 255, 255, 1) 36%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation-name: top-line;
+  animation-duration: 0.5s;
+}
+
+.table {
+  width: 80%;
+  height: 96%;
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: url(img/圧縮/interior3-3.jpg) center no-repeat;
+  background-size: cover;
+  border-radius: 30px;
+  animation-name: fluffy-menu1;
+  animation-duration: 0.5s;
+  transition: 0.5s;
+  z-index: 7;
+}
+.return {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  height: 3vw;
+  width: 3vw;
+  font-size: 2vw;
+  text-align: center;
+  box-shadow: 4px 6px 5px 5px rgba(0, 0, 0, 0.7) inset;
+  border: 1px solid rgb(121, 121, 121);
+  color: rgb(121, 121, 121);
+  border-radius: 50%;
+  z-index: 4;
+}
+.return:hover {
+  color: white;
+  border-color: white;
+}
+.contens-all {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: 20px;
+}
+
+.product-contens {
+  margin: 0px;
+}
+.contens {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 80px 20px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.596);
+  border: 1px solid rgba(82, 75, 67, 0.541);
+  border-radius: 15px;
+}
+.product-Explanation {
+  border-top: 1px solid rgba(82, 75, 67, 0.541);
+  height: 100%;
+  position: relative;
+}
+.product-img > img {
+  border-radius: 15px 15px 0 0;
+  size: cover;
+}
+.P-name {
+  font-size: 200%;
+  font-weight: bold;
+}
+.P-Ex {
+  margin: 0 5px 15% 5px;
+  font-size: 150%;
+}
+.price {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 140%;
+  font-weight: bold;
+}
+/*画面調節*/
+@media (max-width: 480px) {
+  .product-contens > h1 {
+    font-size: 10vw;
+  }
+  .contens {
+    width: 100%;
+    margin: 0px 0px 80px 0px;
+  }
+  .P-name {
+    font-size: 8vw;
+  }
+  .P-Ex {
+    font-size: 6vw;
+  }
+  .price {
+    font-size: 6vw;
+  }
+}
+
+/*チェックボックス*/
+.start-up {
+  position: absolute;
+  left: -50%;
+}
+.start-up[type="checkbox"]:checked ~ .table {
+  animation-duration: 1s;
+  animation-name: fluffy-menu;
+  top: 50%;
+}
+.back-return {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 6;
+}
+.start-up[type="checkbox"]:checked ~ .back-return {
+  width: 100%;
+  height: 100%;
+}
+
+/*内装紹介*/
+/*スタイル*/
+.interior-all {
+  width: 80%;
+  height: 96%;
+  position: absolute;
+  left: 50%;
+  top: 160%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: scroll;
+  color: white;
+  padding-top: 40px;
+  transition: 0.5s;
+  animation-name: fluffy-menu1;
+  animation-duration: 0.5s;
+  z-index: 7;
+}
+.interior-all::-webkit-scrollbar {
+  display: none;
+}
+.room-styl h1 {
+  text-align: center;
+  width: 40%;
+  font-size: 3vw;
+  margin-bottom: 30px;
+}
+.room-styl {
+  margin: 2.5% 5% 20%;
+}
+.room {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+.interior-img {
+  width: 30%;
+  height: 30%;
+  margin-left: 5%;
+  border-radius: 10px;
+}
+.room-1 {
+  margin: 0 0% 0 16%;
+}
+.return-2 {
+  display: block;
+  position: sticky;
+  color: rgb(121, 121, 121);
+  border-radius: 50%;
+  border: 1px solid rgb(121, 121, 121);
+  left: 95%;
+  top: -2%;
+  height: 3vw;
+  width: 3vw;
+  font-size: 2vw;
+  text-align: center;
+}
+.return-2:hover {
+  color: white;
+  border-color: white;
+}
+/*画面調節*/
+@media (max-width: 480px) {
+  .room-styl {
+    margin: 0 0 200px 0;
+  }
+  .room-styl h1 {
+    font-size: 10vw;
+    width: 100%;
+  }
+  .room-1 {
+    font-size: 5vw;
+  }
+}
+/*チェックボックス*/
+.start-up:checked ~ .interior-all {
+  top: 50%;
+  animation-name: fluffy-menu;
+  animation-duration: 1s;
+}
+.start-up:checked ~ .back-return {
+  width: 100%;
+  height: 100%;
+}
+
+/*予約見た目*/
+.reserve-styl {
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+  -webkit-transiform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: url(img/access1-3.jpg) center no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 80%;
+  color: white;
+  animation-name: fluffy-menu1;
+  animation-duration: 0.5s;
+  transition: 0.5s;
+  overflow: scroll;
+  z-index: 7;
+}
+.reserve-styl::-webkit-scrollbar {
+  display: none;
+}
+fieldset {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+legend {
+  font-size: 3.6vw;
+}
+fieldset {
+  margin: 10% 0 10% 0;
+  width: 90%;
+  display: inline;
+}
+.access-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reserve-all {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 40%;
+  height: 100%;
+}
+.label-styl {
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+  font-size: 50%;
+  position: relative;
+}
+.label-styl::after {
+  content: ":";
+  position: absolute;
+  right: 0;
+  font-size: 200%;
+  top: 50%;
+  margin-top: -20%;
+}
+.text {
+  margin: 4% 4%;
+  width: 60%;
+  height: 2vw;
+  font-size: 50%;
+  background-color: rgba(9, 9, 9, 0.4);
+  color: white;
+  font-family: MyFont;
+}
+.btn-all-div {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5% 5.5%;
+}
+.btn-styl {
+  margin: 0 0 0 10%;
+  width: 15%;
+  height: 2vw;
+  color: white;
+  position: relative;
+  display: inline-block;
+  right: 0;
+}
+.btn-styl::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: white;
+  left: 0;
+  bottom: 0;
+  transition: transform 0.2s;
+  transform-origin: right;
+  transform: scaleX(0);
+}
+.btn-styl:hover::after {
+  transition: transform 0.3s;
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.btn-styl:hover {
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+  transform: translateY(-10px);
+}
+.btn-styl-in {
+  width: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-family: MyFont;
+  background: none;
+  border: none;
+  color: white;
+}
+.L-3 {
+  position: sticky;
+  display: block;
+  left: 95.6%;
+  top: 1%;
+  height: 3vw;
+  width: 3vw;
+  font-size: 2vw;
+  text-align: center;
+  box-shadow: 4px 6px 5px 5px rgba(0, 0, 0, 0.7) inset;
+  border: 1px solid rgb(121, 121, 121);
+  color: rgb(121, 121, 121);
+  border-radius: 50%;
+}
+.L-3:hover {
+  color: white;
+  border-color: white;
+}
+/*画面調節*/
+@media (max-width: 480px) {
+  legend {
+    font-size: 10vw;
+  }
+  .reserve-all {
+    left: 5%;
+    width: 90%;
+  }
+  .access-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0 40px 0;
+  }
+  .text {
+    width: 90%;
+    height: 20px;
+  }
+  .label-styl {
+    font-size: 4vw;
+    width: 90%;
+  }
+  .label-styl::after {
+    display: none;
+  }
+  .btn-styl {
+    width: 30%;
+    height: 20%;
+  }
+}
+/*予約チェックボックス*/
+.start-up:checked ~ .reserve-styl {
+  top: 50%;
+  animation-name: fluffy-menu;
+  animation-duration: 1s;
+}
+/*アニメーション*/
+/*ふわっと出るアニメーション*/
+@keyframes fluffy {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fluffy-menu {
+  0% {
+    opacity: 0;
+    top: 70%;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fluffy-menu1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes top-line {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

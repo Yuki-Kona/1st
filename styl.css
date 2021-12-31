@@ -13,19 +13,15 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   body {
     background: url(img/圧縮/index3-mobail.jpg) center no-repeat;
     background-size: cover;
+    overflow: hidden;
+    height: 104vh;
   }
 }
 
-.nav a {
-  text-decoration: none;
-  font-weight: bold;
-  color: white;
-  font-size: 3vh;
-}
 /*ロゴ*/
 .logo {
   width: 40px;
@@ -102,6 +98,7 @@ body {
   animation-delay: 1s;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  bottom: 0px;
 
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0+32,0+32,0.19+100 */
   background: -moz-linear-gradient(
@@ -166,13 +163,13 @@ p {
   margin: 10px;
   font-size: 3vw;
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .kachicopy > p {
     font-size: 6vw;
   }
   .styl-C {
     position: absolute;
-    height: 1px;
+    height: 1%;
     width: 100%;
     left: 0%;
     top: 75%;
@@ -219,6 +216,10 @@ p {
     opacity: 0;
     animation-fill-mode: forwards;
   }
+  .kachicopy > p {
+    position: relative;
+    top: -40px;
+  }
   .kachicopy {
     color: white;
     font-weight: bold;
@@ -228,8 +229,8 @@ p {
     flex-direction: column;
     align-items: center;
     left: 0%;
-    top: 50%;
-    width: 100%;
+    bottom: -30px;
+    width: 106%;
     height: 30%;
     padding: 0 0 30% 0;
     animation-name: fluffy;
@@ -264,9 +265,6 @@ nav {
   display: flex;
   justify-content: center;
 }
-.navall:hover:not(.nav:hover) {
-  color: rgba(0, 0, 0, 0.4);
-}
 .nav:hover {
   padding-bottom: 10px;
 }
@@ -274,18 +272,21 @@ nav {
   content: "";
   width: 100%;
   height: 2px;
-  background-color: white;
   position: absolute;
   left: 0;
   bottom: 0;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 0.3s;
+  transition: transform 0.3s, background 0.5s;
+  background: white;
 }
+
 .nav:hover::after {
   transform-origin: left;
   transform: scaleX(1);
+  background: rgb(255, 94, 0);
 }
+
 .navall {
   display: flex;
   justify-content: space-between;
@@ -293,12 +294,35 @@ nav {
   width: 70%;
   height: 50px;
 }
+.nav-clip {
+  font-size: 2.5vw;
+  color: transparent;
+  top: 0;
+  width: 100%;
+}
+.nav {
+  background: linear-gradient(white 50%, rgb(255, 94, 0) 50%);
+  background-size: 50px 200px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background 0.5s;
+}
+.nav:hover {
+  background-position: 0 100%;
+  transition: background 0.3xxs;
+}
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2.5vw;
+  color: transparent;
+}
 
 /*mobail*/
 .nav-mobail {
   display: none;
 }
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   nav {
     top: 500vw;
   }
@@ -307,10 +331,11 @@ nav {
     position: absolute;
     color: white;
     font-weight: bold;
-    height: 100%;
-    width: 100%;
+    height: 103%;
+    width: 106%;
     left: 0;
     top: 0;
+    overflow: hidden;
   }
   .mobail-label {
     position: absolute;
@@ -379,7 +404,7 @@ nav {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
 
     left: -50%;
-    bottom: 0;
+    bottom: 0px;
   }
   /*チェックボックス*/
   .start-up:checked ~ .mobail:nth-child(3) {
@@ -485,9 +510,9 @@ article {
 /*アクセス*/
 .access-all {
   position: absolute;
-  width: 87%;
+  width: 95%;
   height: 96%;
-  top: 150%;
+  top: 170%;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
@@ -559,11 +584,13 @@ article {
   margin: 0;
   position: relative;
   padding: 0 0 0 20%;
+  overflow: hidden;
 }
 .ferry-icon::after {
   content: url(img/圧縮/ferry2.png);
   position: absolute;
   left: 0;
+  top: -40%;
 }
 .walking-icon::after {
   content: url(img/圧縮/walking.png);
@@ -587,11 +614,11 @@ article {
   display: none;
 }
 .map {
-  margin: 2% 4% 4% 4%;
+  margin: 0% 4% 0% 4%;
   position: sticky;
-  top: 10%;
-  height: 30vw;
-  width: 30vw;
+  top: 0%;
+  height: 20vh;
+  width: 20vw;
 }
 iframe {
   border-radius: 10px;
@@ -599,25 +626,29 @@ iframe {
 
 .detail {
   right: 0;
-  width: 40%;
-  margin: 4% 4% 0% 0%;
+  width: 0%;
+  margin: 0% 4% 0% 0%;
 }
 /*画面調節*/
 @media (max-width: 1436px) {
   .map {
-    position: static;
-    width: 90%;
-    height: 80%;
+    position: sticky;
+    width: 40%;
+    height: 90%;
   }
   .detail {
-    padding: 0 0 10% 0;
-    width: 80%;
-    padding: 0 0 0 4%;
+    padding: 0 0 0% 0;
+    width: 40%;
+    padding: 0 0 0 0%;
     margin: 0 0 0 4%;
+    height: 90%;
   }
   .detail h1 {
     margin: 10% 0 0 0;
-    font-size: 350%;
+    font-size: 200%;
+  }
+  .detail > .ferry-icon {
+    margin-top: 0;
   }
   .total::before {
     top: -50px;
@@ -631,7 +662,7 @@ iframe {
     margin-top: 50px;
   }
 }
-@media (min-width: 729px) {
+@media (min-width: 877px) {
   .pc {
     display: block;
   }
@@ -639,19 +670,12 @@ iframe {
     display: none;
   }
 }
-@media (max-width: 728px) {
+@media (max-width: 877px) {
   .pc {
     display: none;
   }
   .pe {
     display: block;
-  }
-  .total::before {
-    content: url(img/ferry2-20px.png) "+" url(img/walking-20px.png) !important;
-    position: absolute;
-    top: 100%;
-
-    font-size: 100% !important;
   }
 }
 @media (max-width: 480px) {
@@ -668,36 +692,63 @@ iframe {
   .detail > h1 {
     padding: 0 0 0 30%;
   }
+  .detail > .ferry-icon {
+    margin-top: 10%;
+  }
   .access-styl > h1 {
     font-size: 10vw;
   }
   .total::before {
     left: -60% !important;
   }
+  .detail {
+    width: 90%;
+  }
 }
 .root {
-  margin: 50px 0 235px 4%;
-  padding: 0 0 0% 15%;
   color: white;
-  display: flow-root;
+  position: relative;
 }
+.root-label {
+  display: inline-block;
+  margin: 5px 0 0;
+  z-index: 5;
+}
+.root-label:hover {
+  color: rgb(255, 94, 0);
+}
+.root-all {
+  position: relative;
+  line-height: 0;
+  border: 1px solid azure;
+  border-radius: 10px;
+  opacity: 0;
+  z-index: 3;
+  transition: 0.3s;
+}
+.root-btn-in:checked ~ .root-all {
+  line-height: 2em;
+  opacity: 1;
+  top: 0;
+  padding: 30px;
+  margin: 10px;
+}
+.root-btn-in {
+  position: absolute;
+  left: -1000px;
+}
+.root-rist {
+  margin: 5px;
+}
+
 .root-contns {
-  padding: 2% 0% 2% 15%;
-  margin: 15% 0;
+  padding: 0% 0% 0% 0%;
+  margin: 1% 0;
   position: relative;
   font-size: 150%;
 }
-.root-contns::after {
-  position: absolute;
-  content: "";
-  width: 1px;
-  background: white;
-  left: 0;
-  top: 0;
-  height: 100%;
-  transform: rotate(15deg);
-}
-/*フェリーの番号*/ /*徒歩の時間*/
+
+/*フェリーの番号*/ /*徒歩の時間
 .root-contns:not(.total):nth-child(1)::before {
   content: "1";
   position: absolute;
@@ -828,7 +879,7 @@ iframe {
   height: 96%;
   position: absolute;
   left: 50%;
-  top: 150%;
+  top: 170%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -874,12 +925,12 @@ iframe {
   flex-direction: column;
   margin: 20px 20px 80px 20px;
   width: 300px;
-  background-color: rgba(255, 255, 255, 0.596);
+  background-color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(82, 75, 67, 0.541);
   border-radius: 15px;
 }
 .product-Explanation {
-  border-top: 1px solid rgba(82, 75, 67, 0.541);
+  border-top: 1px solid rgba(82, 75, 67, 1);
   height: 100%;
   position: relative;
 }
@@ -939,7 +990,7 @@ iframe {
   z-index: 6;
 }
 .start-up[type="checkbox"]:checked ~ .back-return {
-  width: 100%;
+  width: 106%;
   height: 100%;
 }
 
@@ -1035,7 +1086,7 @@ iframe {
 .reserve-styl {
   position: absolute;
   left: 50%;
-  top: 150%;
+  top: 170%;
   transform: translate(-50%, -50%);
   -webkit-transiform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);

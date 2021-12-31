@@ -15,10 +15,10 @@
         <!--したのナビ-->
     <nav>
         <div class="navall">
-            <div class="nav"><a href=""><label for="access-btn">Access</label></a></div>
-            <div class="nav"><a href=""><label for="product-input">Productl</a></div>
-            <div class="nav"><a href=""><label for="interior-btn">Interior</label></a></div>
-            <div class="nav"><a href=""><label for="reserve-btn">Reserve</label></a></div>
+            <div class="nav"><a href=""><label class="btn-label" for="product-input">メニュー</label></a></div>
+            <div class="nav"><a href=""><label for="interior-btn">インテリア</label></a></div>
+            <div class="nav"><a href=""><label for="access-btn">アクセス</label></a></div>
+            <div class="nav"><a href=""><label for="reserve-btn">ヨヤク</label></a></div>
         </div>
         <footer>
             <div class="copy">
@@ -35,14 +35,14 @@
         </footer>
     </nav>
     <div class="nav-mobail">
-        <label for="nav-btn" class="mobail-label">Menu</label>
+        <label for="nav-btn" class="mobail-label">メニュー</label>
         <div class="nav-mobail-all">
             <input type="checkbox" id="nav-btn" name="nav-btn" class="start-up">
             <label for="nav-btn" class="back-return mobail-return"></label>
-            <div class="mobail"><label for="access-btn">Access</label></div>
-            <div class="mobail"><label for="product-input">Productl</label></div>
-            <div class="mobail"><label for="interior-btn">Interior</label></div>
-            <div class="mobail"><label for="reserve-btn">Reserve</label></div>
+            <div class="mobail"><label for="product-input">メニュー</label></div>
+            <div class="mobail"><label for="interior-btn">インテリア</label></div>
+            <div class="mobail"><label for="access-btn">アクセス</label></div>
+            <div class="mobail"><label for="reserve-btn">ヨヤク</label></div>
         </div>
     </div>
     <!--アクセス-->
@@ -61,10 +61,14 @@
                     <div class="detail">
                         <h1 class="ferry-icon">Ferry</h1>
                         <div class="root">
-                            <p class="root-contns ferry">東京-底土/東京 - 阿古間</p>
-                            <p class="root-contns ferry">東京 - 底土/阿古 - 御蔵島間</p>
-                            <p class="root-contns ferry">御蔵島 - 底土/東京 - 底土間</p>
-                            <p class="root-contns ferry">底土 - 青ヶ島間</p>
+                            <input type="checkbox" name="root-btn" id="root-btn" class="root-btn-in">
+                            <label for="root-btn" class="root-label">日の出桟橋～青ケ島 <span>▼</span>詳細</label>
+                            <ol class="root-all">
+                                <li class="root-rist">日の出桟橋フェリー乗り場～三宅島</li>
+                                <li class="root-rist">三宅島～御蔵島</li>
+                                <li class="root-rist">御蔵島～八丈島</li>
+                                <li class="root-rist">八丈島～青ケ島(三方港)</li>
+                            </ol>
                         </div>
                         <h1 class="walking-icon">Walking</h1>
                         <div class="root">
